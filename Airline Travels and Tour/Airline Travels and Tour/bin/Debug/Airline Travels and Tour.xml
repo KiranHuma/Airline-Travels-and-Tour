@@ -1,0 +1,436 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+AirlineTravelsandTour
+</name>
+</assembly>
+<members>
+<member name="T:Airline_Travels_and_Tour.airlineeDataSet.bankdetailsDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Airline_Travels_and_Tour.airlineeDataSet.expensisDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Airline_Travels_and_Tour.airlineeDataSet.mainofficeDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Airline_Travels_and_Tour.airlineeDataSet.ticketDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Airline_Travels_and_Tour.airlineeDataSet.umrahhDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Airline_Travels_and_Tour.airlineeDataSet.visitDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Airline_Travels_and_Tour.airlineeDataSet.vissaDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Airline_Travels_and_Tour.airlineeDataSet.bankdetailsRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Airline_Travels_and_Tour.airlineeDataSet.expensisRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Airline_Travels_and_Tour.airlineeDataSet.mainofficeRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Airline_Travels_and_Tour.airlineeDataSet.ticketRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Airline_Travels_and_Tour.airlineeDataSet.umrahhRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Airline_Travels_and_Tour.airlineeDataSet.visitRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Airline_Travels_and_Tour.airlineeDataSet.vissaRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Airline_Travels_and_Tour.airlineeDataSet.bankdetailsRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Airline_Travels_and_Tour.airlineeDataSet.expensisRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Airline_Travels_and_Tour.airlineeDataSet.mainofficeRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Airline_Travels_and_Tour.airlineeDataSet.ticketRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Airline_Travels_and_Tour.airlineeDataSet.umrahhRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Airline_Travels_and_Tour.airlineeDataSet.visitRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Airline_Travels_and_Tour.airlineeDataSet.vissaRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Airline_Travels_and_Tour.airlineeDataSet">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:Airline_Travels_and_Tour.airlineeDataSetTableAdapters.bankdetailsTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Airline_Travels_and_Tour.airlineeDataSetTableAdapters.expensisTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Airline_Travels_and_Tour.airlineeDataSetTableAdapters.mainofficeTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Airline_Travels_and_Tour.airlineeDataSetTableAdapters.ticketTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Airline_Travels_and_Tour.airlineeDataSetTableAdapters.umrahhTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Airline_Travels_and_Tour.airlineeDataSetTableAdapters.visitTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Airline_Travels_and_Tour.airlineeDataSetTableAdapters.vissaTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="M:Airline_Travels_and_Tour.airlineeDataSetTableAdapters.TableAdapterManager.UpdateUpdatedRows(Airline_Travels_and_Tour.airlineeDataSet,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Update rows in top-down order.
+</summary>
+</member><member name="M:Airline_Travels_and_Tour.airlineeDataSetTableAdapters.TableAdapterManager.UpdateInsertedRows(Airline_Travels_and_Tour.airlineeDataSet,System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Insert rows in top-down order.
+</summary>
+</member><member name="M:Airline_Travels_and_Tour.airlineeDataSetTableAdapters.TableAdapterManager.UpdateDeletedRows(Airline_Travels_and_Tour.airlineeDataSet,System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Delete rows in bottom-up order.
+</summary>
+</member><member name="M:Airline_Travels_and_Tour.airlineeDataSetTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member><member name="M:Airline_Travels_and_Tour.airlineeDataSetTableAdapters.TableAdapterManager.UpdateAll(Airline_Travels_and_Tour.airlineeDataSet)">
+	<summary>
+Update all changes to the dataset.
+</summary>
+</member><member name="T:Airline_Travels_and_Tour.airlineeDataSetTableAdapters.TableAdapterManager.UpdateOrderOption">
+	<summary>
+Update Order Option
+</summary>
+</member><member name="T:Airline_Travels_and_Tour.airlineeDataSetTableAdapters.TableAdapterManager.SelfReferenceComparer">
+	<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member><member name="T:Airline_Travels_and_Tour.airlineeDataSetTableAdapters.TableAdapterManager">
+	<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member><member name="P:Airline_Travels_and_Tour.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:Airline_Travels_and_Tour.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="P:Airline_Travels_and_Tour.My.Resources.Resources._15e3c1404c0c84bdf23020539adccc5b">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Airline_Travels_and_Tour.My.Resources.Resources._15e3c1404c0c84bdf23020539adccc5b1">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Airline_Travels_and_Tour.My.Resources.Resources._397501_10151992124758582_1992874322_n">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Airline_Travels_and_Tour.My.Resources.Resources._397501_10151992124758582_1992874322_n1">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Airline_Travels_and_Tour.My.Resources.Resources._3d_house_and_office_building_vector7">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Airline_Travels_and_Tour.My.Resources.Resources._3d_house_and_office_building_vector71">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Airline_Travels_and_Tour.My.Resources.Resources._3d_house_and_office_building_vector72">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Airline_Travels_and_Tour.My.Resources.Resources._82107196661">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Airline_Travels_and_Tour.My.Resources.Resources._821071966611">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Airline_Travels_and_Tour.My.Resources.Resources.airplane_wallpaper_3">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Airline_Travels_and_Tour.My.Resources.Resources.airplane_wallpaper_31">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Airline_Travels_and_Tour.My.Resources.Resources.airplane_wallpaper_32">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Airline_Travels_and_Tour.My.Resources.Resources.airplane_wallpaper_33">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Airline_Travels_and_Tour.My.Resources.Resources.airplane_wallpaper_33___Copy__2_">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Airline_Travels_and_Tour.My.Resources.Resources.airplane_wallpaper_9">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Airline_Travels_and_Tour.My.Resources.Resources.Airwais_3">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Airline_Travels_and_Tour.My.Resources.Resources.Apps_preferences_system_login_icon">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Airline_Travels_and_Tour.My.Resources.Resources.architect_field_report">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Airline_Travels_and_Tour.My.Resources.Resources.banking">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Airline_Travels_and_Tour.My.Resources.Resources.banking1">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Airline_Travels_and_Tour.My.Resources.Resources.banking2">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Airline_Travels_and_Tour.My.Resources.Resources.blog_profit">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Airline_Travels_and_Tour.My.Resources.Resources.Budget_Tips_for_Moving_Expenses">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Airline_Travels_and_Tour.My.Resources.Resources.Budget_Tips_for_Moving_Expenses1">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Airline_Travels_and_Tour.My.Resources.Resources.button_36980_960_720">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Airline_Travels_and_Tour.My.Resources.Resources.Commercial_Airplane_Widescreen_HD_Wallpapers">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Airline_Travels_and_Tour.My.Resources.Resources.deletered">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Airline_Travels_and_Tour.My.Resources.Resources.download">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Airline_Travels_and_Tour.My.Resources.Resources.download__1_">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Airline_Travels_and_Tour.My.Resources.Resources.download__6_">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Airline_Travels_and_Tour.My.Resources.Resources.download1">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Airline_Travels_and_Tour.My.Resources.Resources.e2">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Airline_Travels_and_Tour.My.Resources.Resources.earthfly__1_">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Airline_Travels_and_Tour.My.Resources.Resources.fly_low_cost_airline_background_9848850">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Airline_Travels_and_Tour.My.Resources.Resources.icon_printer">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Airline_Travels_and_Tour.My.Resources.Resources.icon_reports">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Airline_Travels_and_Tour.My.Resources.Resources.images__10_">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Airline_Travels_and_Tour.My.Resources.Resources.images__10_1">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Airline_Travels_and_Tour.My.Resources.Resources.images__6_">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Airline_Travels_and_Tour.My.Resources.Resources.images1">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Airline_Travels_and_Tour.My.Resources.Resources.Logo_GreenBG">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Airline_Travels_and_Tour.My.Resources.Resources.money_309525_1259817694">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Airline_Travels_and_Tour.My.Resources.Resources.money_309525_12598176941">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Airline_Travels_and_Tour.My.Resources.Resources.money_309525_12598176942">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Airline_Travels_and_Tour.My.Resources.Resources.passport_in_udaipur_55cd98a62afd8_l">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Airline_Travels_and_Tour.My.Resources.Resources.photo">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Airline_Travels_and_Tour.My.Resources.Resources.piedi_per_terra">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Airline_Travels_and_Tour.My.Resources.Resources.print_o_matic_button">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Airline_Travels_and_Tour.My.Resources.Resources.printButton_small_blue">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Airline_Travels_and_Tour.My.Resources.Resources.printer">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Airline_Travels_and_Tour.My.Resources.Resources.printer1">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Airline_Travels_and_Tour.My.Resources.Resources.Register_icon">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Airline_Travels_and_Tour.My.Resources.Resources.Report">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Airline_Travels_and_Tour.My.Resources.Resources.Screenshot__26____Copy">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Airline_Travels_and_Tour.My.Resources.Resources.Screenshot__27_">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Airline_Travels_and_Tour.My.Resources.Resources.Screenshot__27____Copy">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Airline_Travels_and_Tour.My.Resources.Resources.Screenshot__27____Copy___Copy">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Airline_Travels_and_Tour.My.Resources.Resources.Screenshot__32_">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Airline_Travels_and_Tour.My.Resources.Resources.Screenshot__32____Copy">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Airline_Travels_and_Tour.My.Resources.Resources.Screenshot__37____Copy___Copy___Copy">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Airline_Travels_and_Tour.My.Resources.Resources.Screenshot__39____Copy___Copy">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Airline_Travels_and_Tour.My.Resources.Resources.slider3">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Airline_Travels_and_Tour.My.Resources.Resources.tail4">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Airline_Travels_and_Tour.My.Resources.Resources.woman_calculating_company_s_expenses_business_35417256">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Airline_Travels_and_Tour.My.Resources.Resources.wp_1457663254443">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Airline_Travels_and_Tour.My.Resources.Resources.wwb_img9">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="T:Airline_Travels_and_Tour.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+</members>
+</doc>

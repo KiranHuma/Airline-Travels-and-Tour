@@ -1,0 +1,84 @@
+<html>
+
+<script type="text/javascript">
+
+    var defaultSize = "";
+    var isInitDefaultSize = false;
+    var collapseSize = "9,*";
+    var collapsimage = "expander_arrow_up.gif";
+    var expandimage = "expander_arrow_down.gif";
+    
+    /* Expanding or collapsing  title of AR*/
+    function Expand()
+    {
+        // get title frame
+        var title_frame = top.frames['title'];
+        
+        // if title frame equals collapse size
+	    if (!isExpanded())
+	    {
+	        // if first size of title frame is saved
+	        if (isInitDefaultSize)
+	        {
+	            // set saved size of title frame 
+	            title_frame.rows = defaultSize;
+	            // change image in expander td
+		    document.getElementById("expander_td").style.backgroundImage="url("+ collapsimage +")";
+	        }
+	    }
+	    else
+	    {
+        	// if first size of title frame is not saved
+        	if (!isInitDefaultSize)
+	        {
+                // saved first size
+                defaultSize = title_frame.rows;
+                // set flag true - save first title frame size
+	            isInitDefaultSize = true;
+        	}
+            
+            // set collapse size of title frame    
+	        title_frame.rows = collapseSize;
+	        // change image in expander td
+		    document.getElementById("expander_td").style.backgroundImage="url("+ expandimage  +")";
+	    }
+	
+	    saveVariables();
+    }
+    
+    /* check is now title expanded*/
+    function isExpanded()
+    {
+        var title_frame = top.frames['title'];
+        return (title_frame.rows != collapseSize);
+    }
+    
+    /* set top variables */
+    function saveVariables()
+    {
+        top.showTitleImage = isExpanded();
+    }
+    
+    function reloadSavedRequesites()
+    {
+	    if (top.showTitleImage != undefined)
+            if (top.showTitleImage!=isExpanded())
+                Expand();
+    }
+    
+</script>
+
+
+<body style="filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#FFDDDDDD, endColorstr=#FFEEEEEE, gradientType=1 );width:100%; margin:0px; padding:0px;" onload="reloadSavedRequesites()"> 
+    <table cellpadding="0" cellspacing="0" height="100%" width = "100%" style="background-position:'1 1 0 0';background-repeat: no-repeat;background-image: url('banner.gif')">
+    <tr valign="bottom">
+    <td align="center" >
+        <table width="52px" height="9px" cellpadding="0" cellspacing="0"  style="cursor:pointer; background-repeat: no-repeat" onmouseover="this.style.backgroundImage='url(expander_button.gif)';" onmouseout="this.style.backgroundImage='none';" onclick="this.style.backgroundImage='none';Expand()">
+            <tr valign="middle">
+		<td id="expander_td" name="expander_td"  style="cursor:pointer; background-repeat: no-repeat; background-position:center; background-image: url('expander_arrow_up.gif')"></td></tr>
+        </table>
+    </td>
+    </tr>
+    </table> 
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!doctype html public "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9" /> 
+        <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1">
+        <title>SSMA for Sybase: HTML Assesment report. Procedure sp_add_qpgroup</title>
+
+
+        <script language="javascript">
+  
+// save value is column will be reset
+            var isColumnsReset = false;
+
+            function init(fn, s){
+
+// if columns not set previous value
+                if (!isColumnsReset)
+                {
+                    // check is top object exist "columnsPersistance" variable
+                    if (top.columnsPersistance != undefined)
+                    // set previous value
+                        document.getElementById("srcIndexMain").cols = top.columnsPersistance;
+    
+                    isColumnsReset = true;
+                }
+
+//alert(document.frames[fn].name);
+
+                var d=document.location.search;
+
+                if(d!='')
+                {
+                    var prefix= d.substring(d.lastIndexOf('?')+1,d.length);
+                    if( document.frames[fn].document.location.href== "about:blank")
+                        document.frames[fn].document.location.href = prefix+"/"+s;
+                }
+
+            }
+
+            function show()
+            {
+
+            }
+
+            function hide()
+            {
+
+            }
+
+            function saveColumnsPersistance()
+            {
+                // check is top object exist "columnsPersistance" variable
+                if (top.columnsPersistance != undefined)
+                // set previous value
+                    top.columnsPersistance = document.getElementById("srcIndexMain").cols;
+            }
+
+        </script>
+
+
+        <STYLE>
+            .buttons 	{ border-left:1px solid black; border-right:1px solid black; }
+            .left 	{ border-top:0px solid silver;  border-bottom:0px solid silver;}
+            .src 	{ border-left:1px solid black; border-right:1px solid black;border-bottom:1px solid black}
+            .trg 	{ border-left:1px solid black;border-bottom:1px solid black}
+            .stat 	{ border-left:1px solid black;border-bottom:1px solid black;border-right:1px solid black}
+ 
+        </STYLE>
+
+    </head>
+<boby bgcolor="silver" >
+<div display="none">
+<frameset  name="left" rows="32,0,*"  FRAMESPACING="0" TOPMARGIN="0" LEFTMARGIN="0" MARGINHEIGHT="0" MARGINWIDTH="0" frameborder="no" onunload="saveColumnsPersistance()" >
+<frame  TOPMARGIN="0" LEFTMARGIN="0" MARGINHEIGHT="0" MARGINWIDTH="0" bgcolor="mistyrose" class="buttons" src="statButtons.html" name="statButt" scrolling="no">
+<frame display="none" class="stat" src="about:blank" name="stat" scrolling="no" onload="init('stat','stat.xml');">
+
+<frameset  cols="*,*" id="srcIndexMain" BORDER="5"  BORDERCOLOR="silver" name="main" TOPMARGIN="0" LEFTMARGIN="0" MARGINHEIGHT="0" MARGINWIDTH="0"  frameborder="0" framespacing="2" >
+
+<frameset  rows="35,*"  FRAMESPACING="0" TOPMARGIN="0" LEFTMARGIN="0" MARGINHEIGHT="0" MARGINWIDTH="0"  frameborder="0" >
+<frame  class="buttons" src="srcButtons.html" name="srcButt" scrolling="no" FRAMESPACING="2" TOPMARGIN="0" LEFTMARGIN="0" MARGINHEIGHT="0" MARGINWIDTH="0">
+<frame class="src" src="about:blank" name="src" onload="init('src','src.html');">
+</frameset>
+
+<frameset  rows="35,*"  FRAMESPACING="0" TOPMARGIN="0" LEFTMARGIN="0" MARGINHEIGHT="0" MARGINWIDTH="0"  frameborder="0">
+<frame  class="buttons" src="trgButtons.html"  name="trgButt" scrolling="no" FRAMESPACING="0" TOPMARGIN="0" LEFTMARGIN="0" MARGINHEIGHT="0" MARGINWIDTH="0">
+<frame class="trg" src="about:blank" name="trg" onload="init('trg','trg.html');">
+</frameset>
+
+</frameset>
+
+</frameset>
+</div>
+</body>
+</html>

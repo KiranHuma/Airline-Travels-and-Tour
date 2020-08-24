@@ -1,0 +1,548 @@
+<!doctype html public "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9" /> 
+        <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1">
+
+        <script language="javascript">
+            var currentSelection = null;
+            var selectedLev = 1;
+            var currentButton=1;
+
+            function changeButton(s)
+            {
+
+                if(s==1) {
+                    errors.className = 'selectedTab';
+                    errorTable.className = 'selectedTable';
+                    warningTable.className = 'unSelectedTable';
+                    infoTable.className = 'unSelectedTable';
+                    warnings.className = 'unSelectedTab';
+                    infos.className = 'unSelectedTab';
+                }
+                if(s==2) {
+
+                    errors.className = 'unSelectedTab';
+                    errorTable.className = 'unSelectedTable';
+                    warningTable.className = 'selectedTable';
+                    infoTable.className = 'unSelectedTable';
+                    warnings.className = 'selectedTab';
+                    infos.className = 'unSelectedTab';
+                }
+                if(s==3) {
+                    errors.className = 'unSelectedTab';
+                    errorTable.className = 'unSelectedTable';
+                    warningTable.className = 'unSelectedTable';
+                    infoTable.className = 'selectedTable';
+                    warnings.className = 'unSelectedTab';
+                    infos.className = 'selectedTab';
+                }
+
+            }
+            var estim = 0;
+
+            function fnStartInit(s,t)
+            {
+                if (s.readyState=="complete")
+                {
+                    if(s.documentElement.childNodes.length >0)
+                    {
+                        var tot = 0;
+                        for(i=0; i <s.documentElement.childNodes.length;i++)
+                        {
+                            tot = tot +parseInt(s.documentElement.childNodes[i].attributes[2].value);
+                            var val = parseFloat(s.documentElement.childNodes[i].attributes[3].value);
+                            if (val)
+                                estim = estim + val;
+
+                        }
+                        estim = Math.round(estim*100)/100;
+                        etime.innerText = ""+estim +" hr(s)";
+
+//                var result=Math.round(original*100)/100
+//		tot = Math.round(tot*100)/100;
+      		
+                        if(t==1) 
+                        {
+                            errorDiv.style.display="block";
+                            espan.innerText = "Errors("+tot+")";
+			
+                        }
+                        if(t==2) 
+                        {
+                            warningDiv.style.display="block";
+			
+                            wspan.innerText = "Warnings("+tot+")";
+                        }
+                        if(t==3) 
+                        {
+                            infoDiv.style.display="block";
+                            ispan.innerText = "Info("+tot+")";
+			
+                        }
+                    }
+                    else
+                    {
+                        if(t==1) 
+                        {
+                            errors.disabled = true;
+			
+                        }
+                        if(t==2) 
+                        {
+                            warnings.disabled = true;
+			
+                        }
+                        if(t==3) 
+                        {
+                            infos.disabled = true;
+			
+                        }
+                    }   }
+
+            }
+
+
+
+            function jump(s)
+            {
+                top.startNavigate(parseInt(s));
+            }
+
+            var savedClass = '';
+
+            function f2(s)
+            {
+                savedClass=s.className;
+                if(s.className=='unSelectedTab')
+                    s.className = 'mover';
+            }
+
+            function f3(s)
+            {
+                if (s.className != 'selectedTab')
+                    s.className = savedClass;
+            }
+
+            function changeSelection(s)
+            {
+                if (currentSelection == null)
+                {
+                    s.className = "nodeSel";
+                    currentSelection = s;
+                }
+                else
+                {
+                    currentSelection.className = "node";
+                    currentSelection = s;
+                    s.className = "nodeSel";
+                }
+            }
+
+            function GetCategoryLevel(select)
+            {
+   
+                for(var i = 0; i < select.children.length; i++)
+                    if(select.children[i].attributes["selected"].value == "true")
+                        selectedLev = CatToNum(select.children[i].text);
+            }
+
+
+            function CatToNum(cat)
+            {
+                switch(cat)
+                {
+                case "Infos":
+                {
+                    return 2;
+			
+                }
+                case "Warnings":
+                {
+                    return 1;
+			
+                }
+                case "Errors":
+                {return 0;}
+                }
+            }
+
+            function jump(s)
+            {
+                var tree_frame = top.frames['tree'];
+                if(tree_frame.inProgress)
+                    return;
+                changeSelection(s);
+                var id = s.id.substr(4,s.length);
+                top.startNavigate(id);
+
+            }
+
+
+            function toggle(s)
+            {
+                var n = s.parentElement.childNodes[6].innerText;
+                if(s.parentElement.childNodes.length==7){
+
+                    var ml = document.location.href;
+                    var mainPath = ml.substring(0,ml.lastIndexOf(',messages')); 
+
+
+                    var doc = new ActiveXObject("msxml2.DOMDocument.3.0");
+                    doc.async = false;
+                    doc.resolveExternals = false;
+                    doc.validateOnParse = false;
+
+// Load an XML file into the DOM instance.
+                    doc.load("messages/"+n+".xml");
+
+// Display the content of the object.
+//alert("doc: "+doc.xml);
+
+
+                    var newTable = document.createElement("TABLE");
+                    s.parentElement.appendChild(newTable);
+                    doc = doc.childNodes[1];
+                    for(i=0; i <doc.childNodes.length;i++)
+                    {
+                        var myNewRow = newTable.insertRow();
+                        var newCell = myNewRow.insertCell(); 
+                        /*var newDiv = document.createElement("<DIV STYLE='position:relative; left:43px;cursor:hand;' onclick='jump("+
+				doc.childNodes[i].attributes[2].value+");'/>");
+			newCell.appendChild(newDiv);
+		
+			newDiv.innerText = doc.childNodes[i].attributes[0].value;*/
+                        var newDiv = document.createElement("DIV");
+                        var divId = doc.childNodes[i].attributes[2].value;
+                        var divCode = "<DIV STYLE='position:relative; left:43px;cursor:hand;'>"
+			
+                        divCode += "<a onclick='javascript:jump(this);'  id='eDiv"+divId+"'>";
+            
+        
+                        var xml = new ActiveXObject("MSXML2.DOMDocument.3.0");
+                        xml.validateOnParse = false;
+                        xml.async = false;
+                        var path = mainPath + doc.childNodes[i].attributes[2].value +"/cat.xml"
+                        xml.load(path);
+                        try
+                        {
+                            if (xml.parseError.errorcode == null) 
+                            {
+                                if (xml.documentElement.childNodes == null || xml.documentElement.childNodes.length < 1)
+                                    continue;
+                                divCode += "<img src='";
+
+                                var category = xml.documentElement.childNodes[xml.documentElement.childNodes.length-1].getAttribute("category");
+                                if (errors.className == "selectedTab")
+                                    divCode += top.getIcon(category,"error");
+                                else if (warnings.className == "selectedTab")
+                                    divCode += top.getIcon(category,"warning");
+                                else if (infos.className == "selectedTab")
+                                    divCode += top.getIcon(category,"info");
+                                divCode +=  "'>";
+                            }
+                        }
+                        catch(e)
+                        {
+                        }
+
+
+                        var mTime = "";
+                        var conv_time = doc.childNodes[i].attributes[3].value;
+                        if( conv_time>0) {
+                            conv_time = Math.round(conv_time*100)/100;
+                            mTime = ", Estimated manual conversion time: <b>"+conv_time+ "</b> hr(s) "
+                        }
+            
+
+                        divCode += " " + doc.childNodes[i].attributes[0].value+ mTime  + "</a>"; 
+                        divCode += "</DIV>";
+                        newDiv.innerHTML = divCode;
+                        newCell.appendChild(newDiv);
+
+                    }
+                }	
+                ;
+                if(s.src.indexOf("_plus")>0){
+                    s.src="img/nolines_minus.gif";
+                    s.parentElement.childNodes[7].style.display="block";
+                }
+                else{
+                    s.src="img/nolines_plus.gif";
+                    s.parentElement.childNodes[7].style.display="none";
+                }
+
+            }
+            function init()
+            {
+                var height = document.body.clientHeight;
+	
+                height -= 10; // expand/collaps height
+                height -= 35; // header height
+	
+                if (height < 0)
+                    height = 0;
+                var eDiv = document.getElementById("innerDiv");
+                eDiv.style.height = height;
+            }
+
+            var defaultSize = "";
+            var isInitDefaultSize = false;
+            var collapseHeight = 10;
+            var collapseSize = "*," + collapseHeight;
+            var collapsimage = "expander_arrow_down.gif";
+            var expandimage = "expander_arrow_up.gif";
+    
+            /* Expanding or collapsing  message frame of AR*/
+            function Expand()
+            {
+                var main_content = top.document.getElementById("maincontent");
+
+                var message_frame = top.document.getElementById("messages");
+
+                if (!isExpanded())
+                {
+                    if (isInitDefaultSize)
+                    {
+                        main_content.rows = defaultSize;
+                    }
+                }
+                else
+                {
+                    if (!isInitDefaultSize)
+                    {
+                        defaultSize = main_content.rows;
+                        isInitDefaultSize = true;
+                    }
+                
+                    main_content.rows = collapseSize;
+                }
+	
+            }
+
+            /* check is now messages frame expanded */
+            function isExpanded()
+            {
+                var messages = top.document.getElementById("messages");
+                return (messages.height != collapseHeight);
+            }
+    
+            /* set top variables */
+            function saveVariables()
+            {
+                top.showMessageFrame = isExpanded();
+            }
+    
+            function reloadSavedRequesites()
+            {
+                if (top.showMessageFrame != undefined)
+                    if (top.showMessageFrame != isExpanded())
+                        Expand();
+            }
+
+            function buttonStatusReset()
+            {
+                var messages = top.document.getElementById("messages");
+            
+                if (messages.height != collapseHeight)
+                {
+                    document.getElementById("expander_td").style.backgroundImage="url("+ collapsimage +")";
+                    if (!isInitDefaultSize)
+                    {
+                        var main_content = top.document.getElementById("maincontent");
+                        defaultSize = main_content.rows;
+                        isInitDefaultSize = true;
+                    }
+                }
+                else
+                {
+                    if (isInitDefaultSize)
+                        document.getElementById("expander_td").style.backgroundImage="url("+ expandimage +")";
+                }
+	
+                saveVariables();
+            }
+
+        </script>
+
+        <STYLE>
+            a {text-decoration:none; color:#333;}
+            img {border: 0px;}
+            .icons 	{  zoom:91%;position:relative;    top:3px; }
+            .tableIcons 	{zoom:91%; position:relative;    top:0px;}
+            .tablePlusIcons 	{   position:relative;    top:3px;cursor:hand;}
+            .selectedTable 	{  position:relative;    top:5px; }
+            .unSelectedTable 	{ display:none; position:relative;    top:40px; }
+            .panel  {position:relative;    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#FFFFFFFF, endColorstr=#FFBBBBBB, gradientType=0 );
+                background-Color: powderblue;width:100%;height:35px;
+                border-bottom:1px solid BLACK;border-top:1px solid BLACK;}
+
+            /*    	.unSelectedTab 
+	{ 
+		vAlign:middle;
+		background-Color: lightskyblue;
+font-family:  Courier New, sans-serif; font-size: 12px;
+	}
+    	.selectedTab 
+	{ 
+
+		background-Color: deepskyblue;
+font-family:  Courier New, sans-serif; font-size: 12px;
+	}*/
+            a.nodeSel 
+            {
+                background-color: #c0d2ec;
+            }
+
+
+            .unSelectedTab 
+            { 
+                position:relative;   top:4px;height:22px;
+                font-family:  Courier New, sans-serif; font-size: 12px;
+            }
+            .selectedTab 
+            { 
+                position:relative;   top:3px;height:22px;
+		
+                background-Color: #DFEEEE;
+                font-family:  Courier New, sans-serif; font-size: 12px;border:1px solid blue;cursor:not-allowed;
+            }
+            .mover 
+            { 
+                position:relative;   top:3px;height:22px;
+		
+                background-Color: lightsteelblue;
+                font-family:  Courier New, sans-serif; font-size: 12px;border:1px solid blue;cursor:default;
+            }
+            .categorySelect
+            { 
+                position:relative;   top:2px;height:22px;
+		
+            }
+
+ 
+        </STYLE>
+
+    </head>
+<body bgcolor="white" STYLE="width:100%;" onload='javascript:init();reloadSavedRequesites();' scroll='no' onresize="buttonStatusReset();init();">
+<table width="100%" height="10px" cellpadding="0" cellspacing="0">
+<tr valign="middle">
+    <td align="center">
+        <table width="52px" height="9px" cellpadding="0" cellspacing="0"  style="cursor:pointer; background-repeat: no-repeat" onmouseover="this.style.backgroundImage='url(expander_button.gif)';" onmouseout="this.style.backgroundImage='none';" onclick="this.style.backgroundImage='none';Expand()">
+            <tr valign="middle">
+		<td id="expander_td" name="expander_td"  style="cursor:pointer; background-repeat: no-repeat; background-position:center; background-image: url('expander_arrow_down.gif')"></td></tr>
+        </table>
+
+    </td>
+</tr>
+</table>
+<div id='mainDiv' STYLE='height:100%;width:100%;' >
+<div class='panel'>
+<table  style='top:0px; position:absolute;'>
+<tr>
+<td><span class='selectedTab' id = 'errors' onmouseenter='f2(this);'onmouseleave='f3(this);' onclick="changeButton(1);"> <img class='icons' src="error.gif" > <span id ="espan" >Errors </span> </span></td>
+<td><span class='unSelectedTab' style='border-left:1px solid gray;' /> </td>
+<td><span class='unSelectedTab' id = 'warnings'onmouseenter='f2(this);'onmouseleave='f3(this);' onclick="changeButton(2);"> <img class='icons' src="warning.gif" > <span id ="wspan" > Warnings</span> </span></td>
+<td><span class='unSelectedTab' style='border-left:1px solid gray;' /> </td>
+<td><span class='unSelectedTab' id = 'infos'onmouseenter='f2(this);'onmouseleave='f3(this);' onclick="changeButton(3);"> <img class='icons' src="info.gif" > <span id ="ispan" >Info</span></span></td>
+<td>
+<span style='top:8px; width:210px;height:14px;font-family:Arial;font-size:14px;'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Navigate by
+<span class = 'categorySelect'>
+	<select style = 'top:8px;height:14px;font-family:Arial;font-size:14px;' id='selectCategory' onchange = 'GetCategoryLevel(this);'>
+		<option>Errors</option>
+		<option selected>Warnings</option>
+		<option>Infos</option>
+	</select>
+</span>
+</span>
+</td>
+<td>
+<span style='top:8px; position:absolute;width:400px;height:14px;font-family:Arial;font-size:14px;'>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Total estimated manual conversion time:
+
+<span style='color:firebrick;top:0px; position:absolute;' id='etime'>0</span>
+ &nbsp;&nbsp;
+</span>
+</td>
+
+
+</tr>
+</table>
+</div>
+
+<!--<div id='messagesDiv'>
+<div class='panel' style="display:none">
+<table  >
+<tr>
+<td><button class='selectedTab' id = 'errors' onclick="changeButton(1);"> <img class='icons' src="error.gif" > <span id ="espan" > &nbsp;Errors </span> </button></td>
+
+<td><button class='unSelectedTab' id = 'warnings' onclick="changeButton(2);"> <img class='icons' src="warning.gif" > <span id ="wspan" > &nbsp;Warnings</span> </button></td>
+<td><button class='unSelectedTab' id = 'infos' onclick="changeButton(3);"> <img class='icons' src="info.gif" > <span id ="ispan" > &nbsp;Info</span></button></td>
+</tr>
+</table>
+</div>
+-->
+<div id="innerDiv" STYLE='overflow-y:auto;'>
+<div id='errorDiv' style="display:none" >
+<table id='errorTable' class='selectedTable' datasrc="#errorData"  >
+<tr>
+<td> 
+	&nbsp;
+	<img class='tablePlusIcons' src="img/nolines_plus.gif" onclick="toggle(this);">
+	<img class='tableIcons' src="error.gif" >
+	&nbsp;
+	<span datafld="description">
+	</span>	
+	
+	<span  STYLE="display:none;" datafld="name">
+	</span>
+	</td>
+
+</tr>
+</table>
+</div>
+
+<div id='warningDiv' style="display:none" >
+
+<table id='warningTable' class='unSelectedTable' datasrc="#warningData"  >
+<tr>
+<td> 
+	&nbsp;
+	<img class='tablePlusIcons' src="img/nolines_plus.gif" onclick="toggle(this);">
+	<img class='tableIcons' src="warning.gif" >
+	&nbsp;
+	<span datafld="description">
+	</span>	
+	<span  STYLE="display:none;" datafld="name">
+	</span>
+	</td>
+
+</tr>
+</table>
+</div>
+<div id='infoDiv' style="display:none" >
+
+<table id='infoTable' class='unSelectedTable' datasrc="#infoData" >
+<tr>
+<td> 
+	&nbsp;
+	<img class='tablePlusIcons' src="img/nolines_plus.gif" onclick="toggle(this);">
+	<img class='tableIcons' src="info.gif" >
+	&nbsp;
+	<span datafld="description">
+	</span>	
+	<span  STYLE="display:none;" datafld="name">
+	</span>
+	</td>
+
+</tr>
+</table>
+</div>
+</div>
+<XML ID="errorData" SRC="messages/errors.xml" onreadystatechange = "fnStartInit(this,1);"></XML>
+<XML ID="warningData" SRC="messages/warnings.xml" onreadystatechange = "fnStartInit(this,2);"></XML>
+<XML ID="infoData" SRC="messages/infos.xml" onreadystatechange = "fnStartInit(this,3);"></XML>
+
+</div>
+</div>
+</body>
+</html>

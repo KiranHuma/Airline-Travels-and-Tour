@@ -1,0 +1,70 @@
+<HTML><HEAD>
+    
+          <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9" /> 
+
+          <STYLE>
+    TD {border:'none'}
+    TD {cursor:'hand'}
+    .panel  {position:relative;    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#FFFFFFFF, endColorstr=#FFBBBBBB, gradientType=0 );
+background-Color: powderblue;width:100%;height:35px;
+border-bottom:1px solid BLACK;border-top:1px solid BLACK;}
+    img {border: 0px;position:relative;top:4px;left:3px;
+	vertical-align: middle;}
+</STYLE>
+<script>
+
+				function init()
+				{
+
+					try
+					{
+
+						var height = top.getCatHeight();
+						h = height - 285;
+						//var eDiv = document.getElementById("innerDiv");
+						//var str = window.parent.document.location.toString();
+//						if (str.lastIndexOf("srcIndex")>0)
+//    						h-=35;
+						//eDiv.style.height = h;
+						return h;
+					}
+					catch(e)
+					{
+//						var eDiv = document.getElementById("innerDiv");
+//						eDiv.style.height = "100%";
+//						eDiv.style.overflowY='visible';
+						return "100%";
+					}
+				}
+
+
+function show()
+{
+	var sDiv = document.getElementById("showDiv");
+	if (sDiv.className == "opened")
+	{
+	    var fr = top.frames['node'].frames['left'];
+
+//		fr.rows="36,"+init()+",0";
+		fr.rows="36,*,0";
+        sDiv.innerHTML = '<a href="javascript:show()"><img id="open_close" src="img/nolines_minus.gif"></a>';
+        sDiv.className = "closed";
+	}
+	else
+	{
+		var fr = top.frames['node'].frames['left'];
+	    fr.rows="32,0,*";
+	    sDiv.innerHTML = '<a href="javascript:show()"><img id="open_close" src="img/nolines_plus.gif"></a>';
+	    sDiv.className = "opened";
+    }
+	
+}
+
+</script>
+</HEAD>
+<BODY position='absolute' height='35px' bgcolor='lavender'>
+<span class='panel'><table><tr><td><div class="opened" id="showDiv" style="display:block"><a href="javascript:show()"><img id="open_close" src="img/nolines_plus.gif"></a></div></td><td><span style='position:relative;top:4px;font-family:Arial;font-size:13px;'>Statistics:&nbsp;</span></td></table></span>
+</BODY>
+</HTML>
+
+

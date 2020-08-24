@@ -1,0 +1,48 @@
+<!doctype html public "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9" /> 
+        <title>AR Tree View</title>
+    </head>
+
+<script type="text/javascript" src="treeview.js"></script>
+
+<STYLE>
+.tree {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #666;
+	white-space: nowrap;
+}
+.tree img {
+	border: 0px;
+	vertical-align: middle;
+}
+.tree a {
+	color: #333;
+	text-decoration: none;
+}
+.tree a.node, .tree a.nodeSel {
+	white-space: nowrap;
+	padding: 1px 2px 1px 2px;
+}
+.tree a.node:hover, .tree a.nodeSel:hover {
+	color: #333;
+	text-decoration: underline;
+}
+.tree a.nodeSel {
+	background-color: #c0d2ec;
+}
+.tree .clip {
+	overflow: hidden;
+}
+</STYLE>
+<body style="margin-left: 0px; padding-left: 0px;" oncontextmenu="return false;"> 
+    <div class="tree">	
+        <script type="text/javascript" language="JavaScript">
+            var mainPath = null;		
+            init();
+        </script>
+    </div>
+</body>
+</html>

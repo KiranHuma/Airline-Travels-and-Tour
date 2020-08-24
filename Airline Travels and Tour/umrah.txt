@@ -1,0 +1,228 @@
+Imports System.Data
+Imports System.Data.OleDb
+Imports System.Data.Odbc
+Imports System.Data.DataTable
+
+Public Class frmumrah
+    Dim con As New SqlClient.SqlConnection
+    Dim cmd As New SqlClient.SqlCommand
+    Dim cmd1 As New SqlClient.SqlCommand
+    Dim cmd2 As New SqlClient.SqlCommand
+    Dim cmd3 As New SqlClient.SqlCommand
+
+    Dim provider As String
+    Dim dataFile As String
+    Dim connString As String
+    Dim myConnection As OleDbConnection = New OleDbConnection
+    Dim ds As DataSet = New DataSet
+    Dim da As OleDbDataAdapter
+    Dim tables As DataTableCollection = ds.Tables
+    Dim source1 As New BindingSource()
+
+    Dim dt As New DataTable
+    Dim conN As New OleDb.OleDbConnection
+    Dim cmdD As New OleDb.OleDbCommand
+
+    Private Sub dbaccessconnection()
+        'Acces DataBase Connectivity and for MS Access 2003 PROVIDER=Microsoft.Jet.OLEDB.4.0
+        Try
+            con.ConnectionString = "Data Source=MEERHAMZA;Initial Catalog=airline;Integrated Security=True"
+            cmd.Connection = con
+            'MessageBox.Show(con.State.ToString())
+        Catch ex As Exception
+            MsgBox("DataBase not connected due to the reason because " & ex.Message)
+        End Try
+    End Sub
+    Private Sub DBConnection()
+        'Acces DataBase Connectivity and for MS Access 2003 PROVIDER=Microsoft.Jet.OLEDB.4.0
+        Try
+            con.ConnectionString = "provider=Microsoft.ACE.Oledb.12.0;Data Source=airline.accdb"
+            cmd.Connection = con
+            ' MessageBox.Show("connection created")
+        Catch ex As Exception
+            MsgBox("DataBase not connected due to the reason because " & ex.Message)
+        End Try
+    End Sub
+    Private Sub insert()
+        dbaccessconnection()
+        con.Open()
+        cmd.CommandText = "insert into umrah( entry,unme,udte,upasprt,utrvlngdte,uexdte,uorgnlcst,usale,uprft,uduratin,upkge,urefrnce)values('" & txtuentry.Text & "','" & txtunme.Text & "','" & txtudte.Value & "','" & txtupsprt.Text & "','" & txtutrvldte.Value & "','" & txtuexdte.Value & "','" & txtuorgcst.Text & "','" & txtusle.Text & "','" & txtuprft.Text & "','" & txtuduratin.Text & "','" & txtupkge.Text & "','" & txturefrnce.Text & "')"
+        cmd.ExecuteNonQuery()
+        con.Close()
+    End Sub
+    Private Sub del()
+        dbaccessconnection()
+        con.Open()
+        cmd.CommandText = "delete from umrah where entry=" & txtuentry.Text & ""
+        cmd.ExecuteNonQuery()
+        con.Close()
+    End Sub
+    Private Sub edit()
+        dbaccessconnection()
+        con.Open()
+        cmd.CommandText = ("UPDATE umrah SET  unme = '" & txtunme.Text & "', udte= '" & txtudte.Value & "',upasprt= '" & txtupsprt.Text & "',utrvlngdte= '" & txtutrvldte.Value & "',uexdte= '" & txtuexdte.Value & "',uorgnlcst='" & txtuorgcst.Text & "',usale='" & txtusle.Text & "',uprft='" & txtuprft.Text & "',uduratin='" & txtuduratin.Text & "',upkge='" & txtupkge.Text & "',urefrnce='" & txturefrnce.Text & "'   where entry=" & txtuentry.Text & "")
+        cmd.ExecuteNonQuery()
+        con.Close()
+    End Sub
+
+
+    Private Sub frmumrah_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        gridfill()
+        dbaccessconnection()
+        FillCombo()
+        DataGridView1.Sort(DataGridView1.Columns("entry"), System.ComponentModel.ListSortDirection.Ascending)
+
+    End Sub
+    Private Sub FillCombo()
+        Dim myConnToAccess As OleDbConnection
+        Dim ds As DataSet
+        Dim da As OleDbDataAdapter
+        Dim tables As DataTableCollection
+        myConnToAccess = New OleDbConnection("provider=Microsoft.ACE.Oledb.12.0;Data Source=airline.accdb")
+        myConnToAccess.Open()
+        ds = New DataSet
+        tables = ds.Tables
+        da = New OleDbDataAdapter("SELECT unme from umrah ", myConnToAccess)
+        da.Fill(ds, "umrah ")
+        Dim view1 As New DataView(tables(0))
+        With ComboBox1
+            .DataSource = ds.Tables("umrah ")
+            .DisplayMember = "unme"
+            .ValueMember = "unme"
+            .SelectedIndex = 0
+            .AutoCompleteMode = AutoCompleteMode.SuggestAppend
+            .AutoCompleteSource = AutoCompleteSource.ListItems
+        End With
+    End Sub
+    Private Sub gridfill()
+        Timer1.Enabled = True
+        Me.Label23.Text = Format(Now, "dd-MMM-yyyy")
+        provider = "provider=Microsoft.ACE.Oledb.12.0;Data Source=airline.accdb"
+        connString = provider & dataFile
+        myConnection.ConnectionString = connString
+        'entry,unme,udte,upasprt,utrvlngdte,uexdte,uorgnlcst,usale,uprft,uduratin,upkge,urefrnce)
+        da = New OleDbDataAdapter("Select [entry], [unme], [udte],[upasprt],[utrvlngdte],[uexdte],[uorgnlcst],[usale],[uprft],[uduratin],[upkge],[urefrnce]from umrah ", myConnection)
+        da.Fill(ds, "umrah ")
+        Dim view1 As New DataView(tables(0))
+        source1.DataSource = view1
+        DataGridView1.DataSource = view1
+        DataGridView1.Refresh()
+    End Sub
+
+    Private Sub profit()
+        Try
+            Dim minus As Integer
+            Dim a As Integer
+            Dim b As Integer
+            a = txtuorgcst.Text
+            b = txtusle.Text
+            minus = b - a
+            txtuprft.Text = minus
+            'MessageBox.Show(minus)
+        Catch ex As Exception
+            MsgBox("Orignal cost and sale must be in numbers")
+
+        End Try
+    End Sub
+
+
+    Private Sub Btnsve_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Btnsve.Click
+        Me.Refresh()
+        Try
+            If Not txtuentry.Text = "" Then
+                insert()
+                MsgBox("data add successfully")
+
+            Else
+
+                MsgBox("please fill all above textboxes")
+            End If
+        Catch ex As Exception
+            MsgBox("Data is already exist or Textboxs are empty or you enter invalid data")
+        End Try
+        GroupBox1.Enabled = False
+        clear()
+    End Sub
+
+    Private Sub btnupdte_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnupdte.Click
+        If Not txtuentry.Text = "" Then
+            edit()
+            MsgBox("data update successfully")
+
+        Else
+            MsgBox("Select rows from grid to edit")
+        End If
+        Me.Refresh()
+        clear()
+    End Sub
+
+    Private Sub Btndel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Btndel.Click
+        Me.Refresh()
+        If Not txtuentry.Text = "" Then
+            del()
+            MsgBox("data remove successfully")
+
+        Else
+            MsgBox("Select rows from grid to remove")
+        End If
+        clear()
+    End Sub
+
+    Private Sub btnsearch_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnsearch.Click
+        source1.Filter = "[unme] = '" & ComboBox1.Text & "'"
+        DataGridView1.Refresh()
+        ComboBox1.Text = ""
+    End Sub
+
+    Private Sub Timer1_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer1.Tick
+        timer.Text = Date.Now.ToString(" hh:mm:ss")
+    End Sub
+
+    Private Sub done_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles done.Click
+        Me.Dispose()
+    End Sub
+
+    Private Sub DataGridView1_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
+        'entry,unme,udte,upasprt,utrvlngdte,uexdte,uorgnlcst,usale,uprft,uduratin,upkge,urefrnce
+        txtuentry.Enabled = False
+        GroupBox1.Enabled = True
+        Me.txtuentry.Text = DataGridView1.CurrentRow.Cells(0).Value.ToString
+        Me.txtunme.Text = DataGridView1.CurrentRow.Cells(1).Value.ToString
+        Me.txtudte.Text = DataGridView1.CurrentRow.Cells(2).Value.ToString
+        Me.txtupsprt.Text = DataGridView1.CurrentRow.Cells(3).Value.ToString
+        Me.txtutrvldte.Text = DataGridView1.CurrentRow.Cells(4).Value.ToString
+        Me.txtuexdte.Text = DataGridView1.CurrentRow.Cells(5).Value.ToString
+        Me.txtuorgcst.Text = DataGridView1.CurrentRow.Cells(6).Value.ToString
+        Me.txtusle.Text = DataGridView1.CurrentRow.Cells(7).Value.ToString
+        Me.txtuprft.Text = DataGridView1.CurrentRow.Cells(8).Value.ToString
+        Me.txtuduratin.Text = DataGridView1.CurrentRow.Cells(9).Value.ToString
+        Me.txtupkge.Text = DataGridView1.CurrentRow.Cells(10).Value.ToString
+        Me.txturefrnce.Text = DataGridView1.CurrentRow.Cells(11).Value.ToString
+    End Sub
+    Private Sub clear()
+        txtuentry.Text = ""
+        txtunme.Text = ""
+        txtudte.Text = ""
+        txtupsprt.Text = ""
+        txtutrvldte.Text = ""
+        txtuexdte.Text = ""
+        txtuorgcst.Text = ""
+        txtusle.Text = ""
+        txtuprft.Text = ""
+        txtuduratin.Text = ""
+        txtupkge.Text = ""
+        txturefrnce.Text = ""
+    End Sub
+
+    Private Sub Btnadd_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Btnadd.Click
+        GroupBox1.Enabled = True
+        clear()
+    End Sub
+
+    Private Sub Btnclear_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Btnclear.Click
+        clear()
+    End Sub
+    Private Sub txtusle_Validated(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtusle.Validated
+        profit()
+    End Sub
+End Class

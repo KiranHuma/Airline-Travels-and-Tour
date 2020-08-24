@@ -1,0 +1,1007 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{86E4A3EC-0A47-4AA1-B875-1754194672AB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>Airline_Travels_and_Tour.logo</StartupObject>
+    <RootNamespace>Airline_Travels_and_Tour</RootNamespace>
+    <AssemblyName>Airline Travels and Tour</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsFormsWithCustomSubMain</MyType>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>Airline Travels and Tour.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>Airline Travels and Tour.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>
+    </ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="airlineeDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>airlineeDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="choose.Designer.vb">
+      <DependentUpon>choose.vb</DependentUpon>
+    </Compile>
+    <Compile Include="choose.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Choosereports.Designer.vb">
+      <DependentUpon>Choosereports.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Choosereports.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChoosRprt.Designer.vb">
+      <DependentUpon>ChoosRprt.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ChoosRprt.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="editbnk.Designer.vb">
+      <DependentUpon>editbnk.vb</DependentUpon>
+    </Compile>
+    <Compile Include="editbnk.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="editticket.Designer.vb">
+      <DependentUpon>editticket.vb</DependentUpon>
+    </Compile>
+    <Compile Include="editticket.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmbnk.Designer.vb">
+      <DependentUpon>frmbnk.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmbnk.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmbpic.Designer.vb">
+      <DependentUpon>frmbpic.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmbpic.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmexpensis.Designer.vb">
+      <DependentUpon>frmexpensis.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmexpensis.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGrndrecord.Designer.vb">
+      <DependentUpon>frmGrndrecord.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmGrndrecord.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frmmainoffice.Designer.vb">
+      <DependentUpon>Frmmainoffice.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frmmainoffice.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmumrah.Designer.vb">
+      <DependentUpon>frmumrah.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmumrah.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmuRcrds.Designer.vb">
+      <DependentUpon>frmuRcrds.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmuRcrds.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frmvisa.Designer.vb">
+      <DependentUpon>Frmvisa.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frmvisa.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frmvisit.Designer.vb">
+      <DependentUpon>Frmvisit.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frmvisit.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="login.Designer.vb">
+      <DependentUpon>login.vb</DependentUpon>
+    </Compile>
+    <Compile Include="login.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="logo.Designer.vb">
+      <DependentUpon>logo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="logo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Other reports\bnkdterprt.Designer.vb">
+      <DependentUpon>bnkdterprt.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Other reports\bnkdterprt.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Other reports\CRDdtebnk.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CRDdtebnk.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Other reports\CRDdteexp.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CRDdteexp.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Other reports\CRDoffce.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CRDoffce.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Other reports\CRdtevist.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CRdtevist.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Other reports\CRDvisa.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CRDvisa.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Other reports\CRTdtet.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CRTdtet.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Other reports\expdterprt.Designer.vb">
+      <DependentUpon>expdterprt.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Other reports\expdterprt.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Other reports\GTRview.Designer.vb">
+      <DependentUpon>GTRview.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Other reports\GTRview.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Other reports\offdterprt.Designer.vb">
+      <DependentUpon>offdterprt.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Other reports\offdterprt.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Other reports\rprtTdte.Designer.vb">
+      <DependentUpon>rprtTdte.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Other reports\rprtTdte.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Other reports\Tdatechose.Designer.vb">
+      <DependentUpon>Tdatechose.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Other reports\Tdatechose.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Other reports\viewbnkrprt.Designer.vb">
+      <DependentUpon>viewbnkrprt.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Other reports\viewbnkrprt.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Other reports\viewexprprt.Designer.vb">
+      <DependentUpon>viewexprprt.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Other reports\viewexprprt.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Other reports\viewoffcerprt.Designer.vb">
+      <DependentUpon>viewoffcerprt.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Other reports\viewoffcerprt.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Other reports\viewvisaR.Designer.vb">
+      <DependentUpon>viewvisaR.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Other reports\viewvisaR.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Other reports\viewvstrprt.Designer.vb">
+      <DependentUpon>viewvstrprt.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Other reports\viewvstrprt.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Other reports\visitdtrprt.Designer.vb">
+      <DependentUpon>visitdtrprt.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Other reports\visitdtrprt.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Other reports\udaterprt.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>udaterprt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Other reports\Udterprt.Designer.vb">
+      <DependentUpon>Udterprt.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Other reports\Udterprt.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Other reports\Urprt.Designer.vb">
+      <DependentUpon>Urprt.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Other reports\Urprt.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Other reports\vissadterprt.Designer.vb">
+      <DependentUpon>vissadterprt.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Other reports\vissadterprt.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Other reports\whole reports\TCRwhlrprt.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TCRwhlrprt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Other reports\whole reports\tiketrprt.Designer.vb">
+      <DependentUpon>tiketrprt.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Other reports\whole reports\tiketrprt.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pexpensis.Designer.vb">
+      <DependentUpon>Pexpensis.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Pexpensis.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Profit.Designer.vb">
+      <DependentUpon>Profit.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Profit.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Profitvisit.Designer.vb">
+      <DependentUpon>Profitvisit.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Profitvisit.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Profitvissa.Designer.vb">
+      <DependentUpon>Profitvissa.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Profitvissa.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\CRexpensis.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CRexpensis.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\CRmainfoffce.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CRmainfoffce.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\CRBank.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CRBank.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\CRticket.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CRticket.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\CRumrah.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CRumrah.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\CRvisit.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CRvisit.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\CRvissa.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CRvissa.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Rprtbnk.Designer.vb">
+      <DependentUpon>Rprtbnk.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Rprtbnk.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\RprtExpnsis.Designer.vb">
+      <DependentUpon>RprtExpnsis.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\RprtExpnsis.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Rprtmainoffce.Designer.vb">
+      <DependentUpon>Rprtmainoffce.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Rprtmainoffce.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Rprtticket.Designer.vb">
+      <DependentUpon>Rprtticket.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Rprtticket.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Rprtumrah.Designer.vb">
+      <DependentUpon>Rprtumrah.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Rprtumrah.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Rprtvisit.Designer.vb">
+      <DependentUpon>Rprtvisit.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Rprtvisit.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Rprtvissa.Designer.vb">
+      <DependentUpon>Rprtvissa.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Rprtvissa.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ticket.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ticket.Designer.vb">
+      <DependentUpon>Ticket.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="tprft.Designer.vb">
+      <DependentUpon>tprft.vb</DependentUpon>
+    </Compile>
+    <Compile Include="tprft.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Other reports\Umrahrprt.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Umrahrprt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="userreg.Designer.vb">
+      <DependentUpon>userreg.vb</DependentUpon>
+    </Compile>
+    <Compile Include="userreg.vb">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="choose.resx">
+      <DependentUpon>choose.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Choosereports.resx">
+      <DependentUpon>Choosereports.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChoosRprt.resx">
+      <DependentUpon>ChoosRprt.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="editbnk.resx">
+      <DependentUpon>editbnk.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="editticket.resx">
+      <DependentUpon>editticket.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmbnk.resx">
+      <DependentUpon>frmbnk.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmbpic.resx">
+      <DependentUpon>frmbpic.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmexpensis.resx">
+      <DependentUpon>frmexpensis.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGrndrecord.resx">
+      <DependentUpon>frmGrndrecord.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frmmainoffice.resx">
+      <DependentUpon>Frmmainoffice.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmumrah.resx">
+      <DependentUpon>frmumrah.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmuRcrds.resx">
+      <DependentUpon>frmuRcrds.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frmvisa.resx">
+      <DependentUpon>Frmvisa.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frmvisit.resx">
+      <DependentUpon>Frmvisit.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="login.resx">
+      <DependentUpon>login.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="logo.resx">
+      <DependentUpon>logo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Other reports\bnkdterprt.resx">
+      <DependentUpon>bnkdterprt.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Other reports\CRDdtebnk.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CRDdtebnk.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Other reports\CRDdteexp.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CRDdteexp.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Other reports\CRDoffce.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CRDoffce.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Other reports\CRdtevist.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CRdtevist.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Other reports\CRDvisa.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CRDvisa.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Other reports\CRTdtet.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CRTdtet.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Other reports\expdterprt.resx">
+      <DependentUpon>expdterprt.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Other reports\GTRview.resx">
+      <DependentUpon>GTRview.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Other reports\offdterprt.resx">
+      <DependentUpon>offdterprt.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Other reports\rprtTdte.resx">
+      <DependentUpon>rprtTdte.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Other reports\Tdatechose.resx">
+      <DependentUpon>Tdatechose.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Other reports\viewbnkrprt.resx">
+      <DependentUpon>viewbnkrprt.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Other reports\viewexprprt.resx">
+      <DependentUpon>viewexprprt.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Other reports\viewoffcerprt.resx">
+      <DependentUpon>viewoffcerprt.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Other reports\viewvisaR.resx">
+      <DependentUpon>viewvisaR.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Other reports\viewvstrprt.resx">
+      <DependentUpon>viewvstrprt.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Other reports\visitdtrprt.resx">
+      <DependentUpon>visitdtrprt.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Other reports\udaterprt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>udaterprt.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Other reports\Udterprt.resx">
+      <DependentUpon>Udterprt.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Other reports\Urprt.resx">
+      <DependentUpon>Urprt.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Other reports\vissadterprt.resx">
+      <DependentUpon>vissadterprt.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Other reports\whole reports\TCRwhlrprt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>TCRwhlrprt.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Other reports\whole reports\tiketrprt.resx">
+      <DependentUpon>tiketrprt.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pexpensis.resx">
+      <DependentUpon>Pexpensis.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Profit.resx">
+      <DependentUpon>Profit.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Profitvisit.resx">
+      <DependentUpon>Profitvisit.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Profitvissa.resx">
+      <DependentUpon>Profitvissa.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\CRexpensis.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CRexpensis.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\CRmainfoffce.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CRmainfoffce.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\CRBank.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CRBank.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\CRticket.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CRticket.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\CRumrah.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CRumrah.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\CRvisit.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CRvisit.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\CRvissa.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CRvissa.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Rprtbnk.resx">
+      <DependentUpon>Rprtbnk.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\RprtExpnsis.resx">
+      <DependentUpon>RprtExpnsis.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Rprtmainoffce.resx">
+      <DependentUpon>Rprtmainoffce.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Rprtticket.resx">
+      <DependentUpon>Rprtticket.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Rprtumrah.resx">
+      <DependentUpon>Rprtumrah.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Rprtvisit.resx">
+      <DependentUpon>Rprtvisit.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Rprtvissa.resx">
+      <DependentUpon>Rprtvissa.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ticket.resx">
+      <DependentUpon>Ticket.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="tprft.resx">
+      <DependentUpon>tprft.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Other reports\Umrahrprt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Umrahrprt.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="userreg.resx">
+      <DependentUpon>userreg.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="airlineeDataSet.xsc">
+      <DependentUpon>airlineeDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="airlineeDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>airlineeDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="airlineeDataSet.xss">
+      <DependentUpon>airlineeDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="My Project\app.manifest" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Commercial-Airplane-Widescreen-HD-Wallpapers.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\earthfly %281%29.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\photo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\print-o-matic_button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-printer.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\printer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\printer1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\printButton-small-blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wwb_img9.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\airplane-wallpaper-3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images %286%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\airplane-wallpaper-31.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\piedi-per-terra.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\15e3c1404c0c84bdf23020539adccc5b.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wp-1457663254443.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\slider3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\82107196661.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\passport-in-udaipur-55cd98a62afd8_l.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3d-house-and-office-building-vector7.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\money-309525-1259817694.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Budget-Tips-for-Moving-Expenses.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\banking.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\airplane-wallpaper-9.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fly-low-cost-airline-background-9848850.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Airwais-3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\15e3c1404c0c84bdf23020539adccc5b1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\banking1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download %286%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\banking2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images %2810%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\e2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\397501_10151992124758582_1992874322_n.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3d-house-and-office-building-vector71.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Budget-Tips-for-Moving-Expenses1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\money-309525-12598176941.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\blog-profit.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Report.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button-36980_960_720.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\airplane-wallpaper-32.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\397501_10151992124758582_1992874322_n1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo_GreenBG.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tail4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-reports.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\airplane-wallpaper-33.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\architect-field-report.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download %281%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\deletered.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\money-309525-12598176942.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\woman-calculating-company-s-expenses-business-35417256.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Apps-preferences-system-login-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Register-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images %2810%291.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3d-house-and-office-building-vector72.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot %2839%29 - Copy - Copy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\airplane-wallpaper-33 - Copy %282%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot %2827%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot %2832%29 - Copy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot %2837%29 - Copy - Copy - Copy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot %2832%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot %2827%29 - Copy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot %2826%29 - Copy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot %2827%29 - Copy - Copy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AccessibilityCplAdminLib">
+      <Guid>{714DD4F6-7676-4BDE-925A-C2FEC2073F36}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>7</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="airplane-around-earth %281%29.ico" />
+    <Content Include="Resources\smileys.gif" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

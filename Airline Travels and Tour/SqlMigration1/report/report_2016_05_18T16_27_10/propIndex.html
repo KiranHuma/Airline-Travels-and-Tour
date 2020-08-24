@@ -1,0 +1,58 @@
+<!doctype html public "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9" /> 
+        <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1">
+
+        <script language="javascript">
+  
+
+            function init(fn, s){
+
+                var d=document.location.search;
+
+                if(d!='')
+                {
+                    var prefix= d.substring(d.lastIndexOf('?')+1,d.length);
+
+                    if( document.frames[fn].document.location.href== "about:blank")
+                        document.frames[fn].document.location.href = prefix+"/"+s;
+                }
+
+            }
+
+            function show()
+            {
+
+            }
+
+            function hide()
+            {
+
+            }
+
+        </script>
+
+
+
+
+        <STYLE>
+            .buttons 	{ border-left:1px solid black; border-right:1px solid black; }
+            .left 	{ border-top:0px solid silver; border-bottom:0px solid silver;}
+            .prop 	{ border-left:1px solid black; border-right:1px solid black; border-bottom:1px solid black}
+            .trg 	{ border-left:1px solid black; border-bottom:1px solid black}
+            .stat 	{ border-left:1px solid black; border-right:1px solid black; border-bottom:1px solid black; border-top:1px solid black}
+ 
+        </STYLE>
+
+    </head>
+<boby bgcolor="silver" >
+<div display="none">
+<frameset  name="left" rows="32,0,*"  FRAMESPACING="0" TOPMARGIN="0" LEFTMARGIN="0" MARGINHEIGHT="0" MARGINWIDTH="0" frameborder="no">
+<frame  TOPMARGIN="0" LEFTMARGIN="0" MARGINHEIGHT="0" MARGINWIDTH="0" bgcolor="mistyrose" class="buttons" src="statButtons.html" name="statButt" scrolling="no">
+<frame display="none" class="stat" src="about:blank" name="stat" scrolling="no" onload="init('stat','stat.xml');">
+<frame class="prop" src="about:blank" name="prop" scrolling="no" onload="init('prop','prop.xml');">
+</frameset>
+</div>
+</body>
+</html>

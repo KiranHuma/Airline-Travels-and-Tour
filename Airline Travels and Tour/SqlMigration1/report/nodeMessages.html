@@ -1,0 +1,257 @@
+<!doctype html public "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1">
+<title>SSMA for Sybase: HTML Assesment report. Procedure sp_add_qpgroup</title>
+
+
+<script language="javascript">
+  
+var doc = new ActiveXObject("msxml2.DOMDocument.3.0");
+
+
+function init(fn, s){
+
+
+var d=document.location.search;
+
+	if(d!='')
+	{
+
+
+		var prefix= d.substring(d.lastIndexOf('?')+1,d.length);
+		try{
+			showXML1(prefix+"/"+s);
+		} catch (e){}
+
+	}
+}
+
+
+
+
+function getIco1(s)
+{
+
+
+   if(s==1)
+	return "warning.gif";
+    if(s==2)
+	return "info.gif";
+	
+    return "error.gif";
+}
+
+
+
+
+function toggle(s)
+{
+
+alert(s);
+	;
+	if(s.src.indexOf("_plus")>0){
+		s.src="img/nolines_minus.gif";
+		s.parentElement.childNodes[3].style.display="block";
+	}
+	else{
+		s.src="img/nolines_plus.gif";
+		s.parentElement.childNodes[3].style.display="none";
+	}
+
+}
+
+
+
+
+function showXML1(s)
+{
+
+
+
+doc.async = false;
+doc.resolveExternals = false;
+doc.validateOnParse = false;
+
+// Load an XML file into the DOM instance.
+doc.load(s);
+
+// Display the content of the object.
+//alert("doc: "+doc.xml);
+
+
+
+
+		var newTable = a23.document.createElement("TABLE");
+		a23.document.all[3].appendChild(newTable);
+		doc = doc.childNodes[1];
+
+
+var severity = 0;
+
+var category = null;
+
+for(i=0; i <doc.childNodes.length;i++)
+{
+
+
+
+category = doc.childNodes[i];
+
+var c = category.attributes[0].value;
+
+
+
+if(c.substring(0,1)=="W")
+	severity = 1;
+
+
+if(c.substring(0,1)=="I")
+	severity = 2;
+
+//alert(severity);
+
+
+
+
+		var myNewRow = newTable.insertRow();
+		var newCell = myNewRow.insertCell(); 
+
+
+
+		var newDiv = a23.document.createElement("<img style='position:relative; left:28px;   top:8px;cursor:hand;' src='img/nolines_minus.gif' 	onclick='javascript:"+
+			'var s = this;	;if(s.src.indexOf("_plus")>0){	s.src="img/nolines_minus.gif";	s.parentElement.childNodes[3].style.display="block";}else{s.src="img/nolines_plus.gif";	s.parentElement.childNodes[3].style.display="none";}'+
+		"'/ >");
+
+
+		newCell.appendChild(newDiv);
+
+		newDiv = a23.document.createElement("<img style='zoom:91%;left:35px; position:relative;    top:5px;' src='"+getIco1(severity)+"' />");
+		newCell.appendChild(newDiv);
+
+		newDiv = a23.document.createElement("<span STYLE='position:relative; top:5px;  left:47px;'></span>");
+		newCell.appendChild(newDiv);
+
+
+
+		newDiv.innerText = category.attributes[0].value;
+
+		var newTable1 = a23.document.createElement("<TABLE style='position:relative;width:90%;'/>");
+		newCell.appendChild(newTable1);
+
+for(j=0; j <category.childNodes.length;j++)
+{
+
+
+
+var grp = category.childNodes[j];
+
+
+		var myNewRow1 = newTable1.insertRow();
+		var newCell1 = myNewRow1.insertCell(); 
+
+
+
+		var newDiv1 = a23.document.createElement("<img style='position:relative; left:48px;   top:8px;cursor:hand;' src='img/nolines_minus.gif' 	onclick='javascript:"+
+			'var s = this;	;if(s.src.indexOf("_plus")>0){	s.src="img/nolines_minus.gif";	s.parentElement.childNodes[3].style.display="block";}else{s.src="img/nolines_plus.gif";	s.parentElement.childNodes[3].style.display="none";}'+
+		"'/ >");
+
+		newCell1.appendChild(newDiv1);
+
+		newDiv1 = a23.document.createElement("<img style='zoom:91%;left:55px; position:relative;    top:5px;' src='"+getIco1(severity)+"' />");
+		newCell1.appendChild(newDiv1);
+
+		newDiv1 = a23.document.createElement("<span STYLE='position:relative; top:5px; font-weight:bold;left:67px;'></span>");
+		newCell1.appendChild(newDiv1);
+
+
+
+		newDiv1.innerText = grp.attributes[0].value;
+
+
+
+
+		var newTable2 = a23.document.createElement("<TABLE  STYLE='position:relative; top:10px;'     />");
+		newCell1.appendChild(newTable2);
+
+
+
+for(m=0; m <grp.childNodes.length;m++)
+{
+
+
+
+var rec = grp.childNodes[m];
+
+
+		var myNewRow2 = newTable2.insertRow();
+		var newCell2 = myNewRow2.insertCell(); 
+
+
+
+
+		newDiv2 = a23.document.createElement("<img style='zoom:91%;left:70px; position:relative;    top:0px;' src='"+getIco1(severity)+"' />");
+		newCell2.appendChild(newDiv2);
+
+		newDiv2 = a23.document.createElement("<span STYLE='position:relative; left:82px;'></span>");
+		newCell2.appendChild(newDiv2);
+
+
+
+		newDiv2.innerText = rec.attributes[0].value;
+
+
+
+
+}
+
+}
+
+}
+
+
+}
+
+
+
+
+
+
+</script>
+
+
+
+
+<STYLE>
+    .buttons 	{ border-bottom:2px solid silver; zoom: 0.70 }
+    .left 	{ border-top:41px solid silver;  border-bottom:2px solid silver;}
+    .stat 	{ border-left:2px solid silver; border-right:2px solid silver}
+    .cat 	{ border-left:2px solid silver}
+    .children 	{ border-right:2px solid silver}
+	.inv {display:none}
+    .tablePlusIcons 	{   position:relative;    top:3px;cursor:hand;}
+   .tableIcons 	{  zoom:91%; position:relative;    top:0px;}
+ 
+</STYLE>
+
+</head>
+<boby bgcolor="silver"  >
+
+<div id="mydiv"> 
+</div>
+
+<div display="none">
+
+
+<frameset   border="0" BORDERCOLOR="silver" name="main">
+
+
+
+
+<frame class="cat" id='a23' src="about:blank" name="messages" scrolling="auto" onload="init('messages','messages.xml');">
+
+</frameset>
+
+</div>
+</body>
+</html>
